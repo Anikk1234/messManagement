@@ -100,21 +100,17 @@
                         for (let i = 1; i <= 31; i++) {
                             const tr = document.createElement("tr");
 
-                            // Add Date Cell with Rowspan (One date per row)
                             const tdDate = document.createElement("td");
                             const dateValue = `2024-01-${i < 10 ? "0" + i : i}`;
                             tdDate.textContent = dateValue;
                             tr.appendChild(tdDate);
 
-                            // Generate 15 columns per row
                             for (let j = 0; j < 15; j++) {
                                 const td = document.createElement("td");
 
-                                // Ensure every cell has checkboxes
                                 const checkboxContainer = document.createElement("div");
                                 checkboxContainer.classList.add("checkbox-container");
 
-                                // Checkbox 1
                                 const checkbox1 = document.createElement("input");
                                 checkbox1.type = "checkbox";
                                 checkbox1.name = `response[${dateValue}][Person${j + 1}][]`;
@@ -132,13 +128,11 @@
                                 const label2 = document.createElement("label");
                                 label2.textContent = "✔ 2";
 
-                                // Append checkboxes to the container
                                 checkboxContainer.appendChild(checkbox1);
                                 checkboxContainer.appendChild(label1);
                                 checkboxContainer.appendChild(checkbox2);
                                 checkboxContainer.appendChild(label2);
 
-                                // Append the container to the table cell
                                 td.appendChild(checkboxContainer);
                                 tr.appendChild(td);
                             }
